@@ -292,16 +292,23 @@ Here is an illustration of what's happening. When 2 paths collide they form a sh
 
 ## Windows
 
-Install CUDA SDK 10.2 and open VC_CUDA102\Kangaroo.sln in Visual C++ 2019.\
-You may need to reset your *Windows SDK version* in project properties.\
-In Build->Configuration Manager, select the *Release* configuration.\
-Build and enjoy.\
+1. Install CUDA SDK 12.6.
+```powershell
+  winget install "NVIDIA CUDA Toolkit"
+```
+2. Open VC_CUDA126\Kangaroo.sln in Visual C++ 2022.
+3. You may need to reset your *Windows SDK version* in project properties.
+4. In Build->Configuration Manager, select the *Release* configuration.
+
+   **Build and enjoy.**
+
 \
-Note: The current release has been compiled with Visual studio 2019 and CUDA SDK 10.2, if you have a different release of the CUDA SDK, you may need to update CUDA SDK paths in Kangaroo.vcxproj using a text editor. The current nvcc option are set up to architecture starting at 3.0 capability, for older hardware, add the desired compute capabilities to the list in GPUEngine.cu properties, CUDA C/C++, Device, Code Generation.
+Note: The current release has been compiled with Visual studio 2022 and CUDA SDK 12.6, if you have a different release of the CUDA SDK, you may need to update CUDA SDK paths in Kangaroo.vcxproj using a text editor. The current nvcc option are set up to architecture starting at 3.0 capability, for older hardware, add the desired compute capabilities to the list in GPUEngine.cu properties, CUDA C/C++, Device, Code Generation.
 
 Visual Studio 2015 + Cuda 8 => Take project files in VC_CUDA8\
 Visual Sutido 2017 + Cuda 10 => Take project files in VC_CUDA10 (project files might be out of date)\
 Visual Studio 2019 + Cuda10.2 => Take project files in VC_CUDA102\
+Visual Studio 2022 + Cuda12.6 => Take project files in VC_CUDA126\
 
 ## Linux
 
